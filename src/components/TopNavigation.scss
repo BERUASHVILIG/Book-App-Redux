@@ -1,0 +1,40 @@
+.navigation-wrapper {
+  width: 100%;
+  background-color: rgb(53, 53, 108);
+  position: fixed;
+  top: 0;
+}
+
+.active-link {
+  border-bottom: 2px solid orange;
+}
+header {
+  width: 80%;
+  margin: auto;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: orange;
+  font-size: 25px;
+}
+
+.favourite-book-count {
+  font-size: 12px;
+  background-color: rgb(101, 87, 87);
+  padding: 4px;
+  border-radius: 100%;
+  color: "white";
+  margin-bottom: 30px;
+  font-weight: bold;
+}
