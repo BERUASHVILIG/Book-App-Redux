@@ -1,10 +1,10 @@
+import { Action } from "@reduxjs/toolkit";
 import ajax, { ajaxSingle } from "../axios/axiosAPI";
 import {
   SAVE_BOOKS_ACTION,
   UPDATE_FAVOURITES_ACTION,
   SAVE_DETAIL_ACTION,
 } from "../redux/actionTypes";
-import { AppDispatch } from "./store";
 
 export const SAVE_BOOKS = "SAVE_BOOKS";
 export const UPDATE_FAVOURITES = "UPDATE_FAVOURITES";

@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { loadSingleBook } from "../redux/actions";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
+import "./ProductDetail.scss";
+
 const ProductDeatail: React.FC = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -10,31 +12,16 @@ const ProductDeatail: React.FC = () => {
   const book = useAppSelector((state) => state.book);
 
   useEffect(() => {
-    // const timer = setTimeout(() => {
-    dispatch(loadSingleBook(id));
-    // }, 2000);
-    // return () => clearTimeout(timer);
+    dispatch(loadSingleBook(id as string));
   }, [id]);
 
   const returnHome = () => {
     navigate("/");
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "80%",
-        margin: "80px auto",
-        padding: "15px",
-        gap: "15px",
-        borderRadius: "8px",
-        backgroundColor: "#383863",
-      }}
-    >
-      <div>
-        <button style={{}} onClick={returnHome}>
+    <div className="book-container">
+      <div className="book-info">
+        <button className="back-btn" onClick={returnHome}>
           Return Home
         </button>
         <img src={book?.volumeInfo.imageLinks.thumbnail} alt="" />
