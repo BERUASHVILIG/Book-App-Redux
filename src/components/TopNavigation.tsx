@@ -28,7 +28,7 @@ function TopNavigation() {
     <div className="navigation-wrapper">
       <header>
         <h1 style={{ cursor: "pointer" }} onClick={navigateHome}>
-          Book Shop
+          Book Store
         </h1>
         <nav>
           <ul>

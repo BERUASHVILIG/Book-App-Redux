@@ -19,13 +19,4 @@ export const ajaxSingle = axios.create({
   },
 });
 
-// ajax.interceptors.request.use(
-//   function (config) {
-//     return config;
-//   },
-//   function (err) {
-//     return Promise.reject(err);
-//   }
-// );
-
 export default ajax;

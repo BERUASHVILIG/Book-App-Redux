@@ -1,26 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 type LikeProps = {
   isFavourite: boolean;
   onClick: () => void;
 };
+
 const Like: React.FC<LikeProps> = ({ isFavourite, onClick }) => {
-  let classes = "";
-  if (!isFavourite) {
-    classes = "far";
-  }
-  // else {
-  //   classes = "fas";
-  // }
-  if (isFavourite) {
-    classes = "fas";
-  }
+  const [isActive, setIsActive] = useState(isFavourite);
+
+  const handleIconClick = () => {
+    setIsActive(!isActive);
+    onClick();
+  };
+
+  const iconClass = isActive ? "fas" : "far";
+
   return (
     <div>
       <i
-        onClick={onClick}
+        onClick={handleIconClick}
         style={{ cursor: "pointer" }}
-        className={`${classes} fa-heart`}
+        className={`${iconClass} fa-heart`}
       />
     </div>
   );

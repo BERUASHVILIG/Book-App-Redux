@@ -7,18 +7,14 @@ import { updateFavourites } from "../redux/actions";
 const Favourites = () => {
   const favourites = useAppSelector((state) => state.favouritesBooks);
 
-  const { favouritesBooks }: GlobalState = useAppSelector((state) => state);
-
   const dispatch = useAppDispatch();
-
-  const isFoundBook = favouritesBooks.find((book) => book.id === book.id);
 
   return (
     <div>
-      {favourites.length < 0 ? (
-        <h1>there isn't favourite book</h1>
+      {favourites.length === 0 ? (
+        <h1 style={{ marginTop: "50px" }}>There are no favourite books</h1>
       ) : (
-        Object.values(favourites).map((book) => (
+        favourites.map((book) => (
           <div className="favourite-container" key={book.id}>
             <h1>{book.volumeInfo.title}</h1>
             <p>Publish Date: {book.volumeInfo.publishedDate}</p>
@@ -29,7 +25,7 @@ const Favourites = () => {
                 alt={book.volumeInfo.title}
               />
               <Like
-                isFavourite={!!isFoundBook}
+                isFavourite={true} // Since you are iterating over favourites, each book is a favorite
                 onClick={() => dispatch(updateFavourites(book))}
               />
               <Link style={{ color: "#fff" }} to={`/detail/${book.id}`}>
